@@ -1,0 +1,22 @@
+{
+	"name": "Plugin",
+	"version": "1.0",
+	"manifest_version": 2,
+	"description": "Chrome Plugin",
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["contentScript.js"],
+			"run_at": "document_end"
+		}
+	],
+	"permissions": [
+		"background",
+		"tabs",
+		"http://*/*",
+		"https://*/*"
+	]
+}
